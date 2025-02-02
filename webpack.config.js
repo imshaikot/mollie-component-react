@@ -3,9 +3,7 @@ const nodeExternals = require("webpack-node-externals");
 
 module.exports = {
   entry: {
-    index: "./src/index.ts",
-    "components/index": "./src/components/index.ts",
-    "hooks/index": "./src/hooks/index.ts",
+    index: "./src/index.ts"
   },
   output: {
     path: path.resolve(__dirname, "dist"),
