@@ -16,7 +16,7 @@ type Props = {
     onFocus?: (e?: EventState) => void,
 };
 
-export const MollieExpiryDate = forwardRef<any, Props>((props, parentRef) => {
+export const MollieVerificationCodeInput = forwardRef<any, Props>((props, parentRef) => {
     const pointerRef = useRef<HTMLDivElement | null>(null);
     const _componentRef = useRef(null);
     const { _mollie } = useMollie();
@@ -28,10 +28,10 @@ export const MollieExpiryDate = forwardRef<any, Props>((props, parentRef) => {
         const parent = pointerRef.current.parentElement;
         if (!parent) return;
 
-        _componentRef.current = _mollie.createComponent('expiryDate', {
+        _componentRef.current = _mollie.createComponent('verificationCode', {
             styles: props.styles,
             components: {
-                expiryDate: {
+                verificationCode: {
                     label: props.label
                 },
             }

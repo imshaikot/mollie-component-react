@@ -16,7 +16,7 @@ type Props = {
     onFocus?: (e?: EventState) => void,
 };
 
-export const MollieCardNumber = forwardRef<any, Props>((props, parentRef) => {
+export const MollieExpiryDateInput = forwardRef<any, Props>((props, parentRef) => {
     const pointerRef = useRef<HTMLDivElement | null>(null);
     const _componentRef = useRef(null);
     const { _mollie } = useMollie();
@@ -28,10 +28,10 @@ export const MollieCardNumber = forwardRef<any, Props>((props, parentRef) => {
         const parent = pointerRef.current.parentElement;
         if (!parent) return;
 
-        _componentRef.current = _mollie.createComponent('cardNumber', {
+        _componentRef.current = _mollie.createComponent('expiryDate', {
             styles: props.styles,
             components: {
-                cardNumber: {
+                expiryDate: {
                     label: props.label
                 },
             }
@@ -45,7 +45,6 @@ export const MollieCardNumber = forwardRef<any, Props>((props, parentRef) => {
             parent.prepend((pointerRef.current as any).firstChild);
         }
         parent.removeChild(pointerRef.current);
-
 
         if (props.onChange && typeof props.onChange === 'function') {
             (_componentRef.current as any)?.addEventListener('change', (e: EventState) => props.onChange && props.onChange(e));

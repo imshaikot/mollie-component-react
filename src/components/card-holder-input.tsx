@@ -16,7 +16,7 @@ type Props = {
     onFocus?: (e?: EventState) => void,
 };
 
-export const MollieCardHolder = forwardRef<any, Props>((props, parentRef) => {
+export const MollieCardHolderInput = forwardRef<any, Props>((props, parentRef) => {
     const pointerRef = useRef<HTMLDivElement | null>(null);
     const _componentRef = useRef(null);
     const { _mollie } = useMollie();

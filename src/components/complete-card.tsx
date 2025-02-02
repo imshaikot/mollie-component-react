@@ -10,7 +10,7 @@ type Props = {
     expiryDateLabel?: string;
 };
 
-export const MollieCompleteCard = forwardRef<any, Props>(({ ...restProps }, parentRef) => {
+export const MollieCompleteCardForm = forwardRef<any, Props>(({ ...restProps }, parentRef) => {
     const pointerRef = useRef<HTMLDivElement | null>(null);
     const _componentRef = useRef(null);
     const { _mollie } = useMollie();

@@ -4,13 +4,13 @@ const nodeExternals = require("webpack-node-externals");
 module.exports = {
   entry: {
     index: "./src/index.ts",
-    components: "./src/components/index.ts",
-    hooks: "./src/hooks/index.ts"
+    "components/index": "./src/components/index.ts",
+    "hooks/index": "./src/hooks/index.ts",
   },
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "[name].js",
-    library: "@mollie-react-component",
+    library: "mollie-react-component",
     libraryTarget: "umd",
     globalObject: "this"
   },
