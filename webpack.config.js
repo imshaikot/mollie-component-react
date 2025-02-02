@@ -10,7 +10,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "[name].js",
-    library: "mollie-react-component",
+    library: "mollie-component-react-wrapper",
     libraryTarget: "umd",
     globalObject: "this"
   },
