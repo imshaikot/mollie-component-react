@@ -1,6 +1,6 @@
 {
   "name": "mollie-component-react",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -26,7 +26,11 @@
   },
   "scripts": {
     "build": "webpack",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "postpublish": "git push origin main --follow-tags",
+    "minor": "npm version minor && npm publish",
+    "major": "npm version major && npm publish",
+    "patch": "npm version patch && npm publish"
   },
   "peerDependencies": {
     "react": "^18.0.0",
