@@ -55,12 +55,15 @@ Replace `your_profile_id` with your **Mollie Profile ID**.
 `MollieCardForm` provides a fully integrated UI for collecting card details. It manages its own state and event handling.
 
 ```tsx
-import { MollieForm, MollieCardForm } from 'mollie-component-react-wrapper';
+import { MollieForm, MollieCardForm, useMollie } from 'mollie-component-react-wrapper';
 
 const PaymentForm = () => {
+  const { isLoaded } = useMollie();
   const handlePayment = (token: string) => {
     console.log('Received token:', token);
   };
+
+  if (!isLoaded) return <h2>Loading...</h2>;
 
   return (
     <div>
@@ -147,6 +150,13 @@ For more details, refer to [Mollie’s Styling Guide](https://docs.mollie.com/do
 | ----------- | -------- | -------- | ----------------- |
 | `profileId` | `string` | ✅ Yes    | Mollie Profile ID |
 | `options`   | `object` | ❌ No    | Additional Mollie configuration options |
+
+### **🔹 `useMollie`**
+
+| Prop        | Type      | Description                          |
+| ----------- | --------- | ------------------------------------ |
+| `isLoaded`  | `boolean` | Loading state of mollie object       |
+| `_mollie`   | `object`  | A shallow reference to mollie object |
 
 ### **🔹 `MollieForm`**
 

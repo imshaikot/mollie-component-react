@@ -4,6 +4,7 @@ import { MollieComponentContext } from "../mollie-provider";
 type MollieHook = {
   createToken: () => Promise<{ token?: string; error: Error; }>;
   _mollie: any;
+  isLoaded: boolean;
 }
 
 export const useMollie = (): MollieHook => {
@@ -14,6 +15,7 @@ export const useMollie = (): MollieHook => {
       return mollieObject.createToken();
     },
     _mollie: mollieObject,
+    isLoaded,
   };
 };
 
