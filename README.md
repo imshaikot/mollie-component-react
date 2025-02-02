@@ -55,7 +55,7 @@ Replace `your_profile_id` with your **Mollie Profile ID**.
 `MollieCardForm` provides a fully integrated UI for collecting card details. It manages its own state and event handling.
 
 ```tsx
-import { MollieCardForm } from 'mollie-component-react-wrapper';
+import { MollieForm, MollieCardForm } from 'mollie-component-react-wrapper';
 
 const PaymentForm = () => {
   const handlePayment = (token: string) => {
@@ -65,7 +65,9 @@ const PaymentForm = () => {
   return (
     <div>
       <h2>Complete Payment</h2>
-      <MollieCardForm onSubmit={handlePayment} />
+      <MollieForm onSubmit={handlePayment}>
+        <MollieCardForm />
+      </MollieForm>
     </div>
   );
 };
@@ -146,7 +148,7 @@ For more details, refer to [Mollie’s Styling Guide](https://docs.mollie.com/do
 | `profileId` | `string` | ✅ Yes    | Mollie Profile ID |
 | `options`   | `object` | ❌ No    | Additional Mollie configuration options |
 
-### **🔹 `MollieCardForm`**
+### **🔹 `MollieForm`**
 
 | Prop       | Type                      | Required | Description                                |
 | ---------- | ------------------------- | -------- | ------------------------------------------ |
