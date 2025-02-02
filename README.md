@@ -138,7 +138,7 @@ const inputStyle = {
 <MollieCardNumberInput styles={inputStyle} />
 ```
 
-For more details, refer to [Mollie’s Styling Guide](https://docs.mollie.com/docs/mollie-components#styling).
+For more details, refer to [Mollie’s Styling Guide](https://docs.mollie.com/docs/styling-mollie-components).
 
 ---
 
