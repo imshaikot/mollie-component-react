@@ -1,0 +1,1 @@
+export { MollieComponentProvider } from './mollie-provider'
