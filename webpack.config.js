@@ -1,0 +1,27 @@
+const path = require("path");
+const nodeExternals = require("webpack-node-externals");
+
+module.exports = {
+  entry: "./src/index.ts",
+  output: {
+    path: path.resolve(__dirname, "dist"),
+    filename: "index.js",
+    library: "MollieComponentReact",
+    libraryTarget: "umd",
+    globalObject: "this"
+  },
+  module: {
+    rules: [
+      {
+        test: /\.(ts|tsx)$/,
+        exclude: /node_modules/,
+        use: "ts-loader"
+      }
+    ]
+  },
+  externals: [nodeExternals()],
+  resolve: {
+    extensions: [".ts", ".tsx", ".js"]
+  },
+  mode: "production"
+};
